@@ -2,7 +2,6 @@
 
 ![Conformance](https://img.shields.io/badge/Conformance-Check--All%20Passing-brightgreen)
 
-[![Plugin Portal](https://img.shields.io/gradle-plugin-portal/v/name.flowdigger.gradle.python?label=Plugin%20Portal)](https://plugins.gradle.org/plugin/name.flowdigger.gradle.python)
 [![Build and Test](https://github.com/flowdigger/gradle-python-plugin/actions/workflows/test.yml/badge.svg)](https://github.com/flowdigger/gradle-python-plugin/actions/workflows/test.yml)
 [![JUnit Report](https://img.shields.io/badge/JUnit-Report-blue?logo=githubactions)](https://github.com/flowdigger/gradle-python-plugin/actions/workflows/test.yml)
 [![Coverage CI](https://github.com/flowdigger/gradle-python-plugin/actions/workflows/coverage.yml/badge.svg)](https://github.com/flowdigger/gradle-python-plugin/actions/workflows/coverage.yml)
@@ -40,7 +39,6 @@ Structured Knowledge -> XIR -> Observation -> Derivation -> Knowledge -> Applica
 - Plugin ID: `name.flowdigger.gradle.python`
 - Java package: `name.flowdigger.gradle.python`
 - Registered task: `PythonRunnerTask`
-- Plugin Portal page: https://plugins.gradle.org/plugin/name.flowdigger.gradle.python
 
 ## Requirements
 
