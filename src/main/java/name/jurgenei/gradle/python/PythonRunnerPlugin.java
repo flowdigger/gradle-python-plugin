@@ -1,4 +1,4 @@
-package name.jurgenei.gradle.python;
+package org.flowdigger.gradle.python;
 
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;

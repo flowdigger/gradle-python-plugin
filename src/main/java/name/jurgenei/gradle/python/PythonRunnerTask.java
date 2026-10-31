@@ -1,4 +1,4 @@
-package name.jurgenei.gradle.python;
+package org.flowdigger.gradle.python;
 
 import org.gradle.api.DefaultTask;
 import org.gradle.api.GradleException;

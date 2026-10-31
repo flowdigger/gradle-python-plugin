@@ -10,7 +10,7 @@ plugins {
     id 'org.sonarqube' version '6.0.1.5171'
 }
 
-group = 'name.jurgenei.gradle'
+group = 'org.flowdigger.gradle'
 version = '0.1.4'
 
 ext {
@@ -35,8 +35,8 @@ gradlePlugin {
 
     plugins {
         pythonRunner {
-            id = 'name.jurgenei.gradle.python'
-            implementationClass = 'name.jurgenei.gradle.python.PythonRunnerPlugin'
+            id = 'org.flowdigger.gradle.python'
+            implementationClass = 'org.flowdigger.gradle.python.PythonRunnerPlugin'
             displayName = 'Python Runner Plugin'
             description = 'Run Python scripts with per-project virtual environment and requirements caching.'
             tags = ['python', 'virtualenv', 'automation', 'script-runner']
