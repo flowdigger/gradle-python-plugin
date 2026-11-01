@@ -2,7 +2,7 @@
 
 ![Conformance](https://img.shields.io/badge/Conformance-Check--All%20Passing-brightgreen)
 
-[![Plugin Portal](https://img.shields.io/gradle-plugin-portal/v/name.jurgenei.gradle.python?label=Plugin%20Portal)](https://plugins.gradle.org/plugin/name.jurgenei.gradle.python)
+[![Plugin Portal](https://img.shields.io/gradle-plugin-portal/v/org.flowdigger.gradle.python?label=Plugin%20Portal)](https://plugins.gradle.org/plugin/org.flowdigger.gradle.python)
 [![Build and Test](https://github.com/jurgenei/gradle-python-plugin/actions/workflows/test.yml/badge.svg)](https://github.com/jurgenei/gradle-python-plugin/actions/workflows/test.yml)
 [![JUnit Report](https://img.shields.io/badge/JUnit-Report-blue?logo=githubactions)](https://github.com/jurgenei/gradle-python-plugin/actions/workflows/test.yml)
 [![Coverage CI](https://github.com/jurgenei/gradle-python-plugin/actions/workflows/coverage.yml/badge.svg)](https://github.com/jurgenei/gradle-python-plugin/actions/workflows/coverage.yml)
@@ -37,10 +37,10 @@ Structured Knowledge -> XIR -> Observation -> Derivation -> Knowledge -> Applica
 
 ## Plugin Coordinates
 
-- Plugin ID: `name.jurgenei.gradle.python`
-- Java package: `name.jurgenei.gradle.python`
+- Plugin ID: `org.flowdigger.gradle.python`
+- Java package: `org.flowdigger.gradle.python`
 - Registered task: `PythonRunnerTask`
-- Plugin Portal page: https://plugins.gradle.org/plugin/name.jurgenei.gradle.python
+- Plugin Portal page: https://plugins.gradle.org/plugin/org.flowdigger.gradle.python
 
 ## Requirements
 
@@ -52,7 +52,7 @@ Structured Knowledge -> XIR -> Observation -> Derivation -> Knowledge -> Applica
 
 ```groovy
 plugins {
-    id 'name.jurgenei.gradle.python'
+    id 'org.flowdigger.gradle.python'
 }
 
 PythonRunnerTask {
