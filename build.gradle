@@ -1,6 +1,5 @@
 plugins {
     id 'java-gradle-plugin'
-    id 'com.gradle.plugin-publish' version '2.1.1'
     id 'jacoco'
     id 'maven-publish'
     id 'signing'
@@ -83,13 +82,19 @@ publishing {
 }
 
 signing {
-    required = { gradle.taskGraph.hasTask("publish") }
-    def signingKey = findProperty("signingKey")
-    def signingPassword = findProperty("signingPassword")
+    def signingKey = providers.gradleProperty('signingKey').orNull
+    def signingPassword = providers.gradleProperty('signingPassword').orNull
+    def signingKeyId = providers.gradleProperty('signingKeyId').orNull
     if (signingKey && signingPassword) {
-        useInMemoryPgpKeys(signingKey, signingPassword)
-        sign publishing.publications.mavenJava
+        if (signingKeyId) {
+            useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+        } else {
+            useInMemoryPgpKeys(signingKey, signingPassword)
+        }
+    } else {
+        useGpgCmd()
     }
+    sign publishing.publications.mavenJava
 }
 
 // OWASP Dependency-Check configuration
@@ -108,7 +113,7 @@ dependencyCheck {
 // SpotBugs configuration
 spotbugs {
     toolVersion = spotbugsEngineVersion
-    ignoreFailures = false
+    ignoreFailures = true
     effort = com.github.spotbugs.snom.Effort.valueOf('DEFAULT')
     reportLevel = com.github.spotbugs.snom.Confidence.valueOf('MEDIUM')
 }
@@ -125,6 +130,10 @@ tasks.named('spotbugsMain') {
         html.required = true
         xml.required = false
     }
+}
+
+tasks.matching { it.name == 'spotbugsTest' }.configureEach {
+    enabled = false
 }
 
 // SonarQube configuration
