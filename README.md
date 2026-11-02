@@ -2,6 +2,9 @@
 
 ![Conformance](https://img.shields.io/badge/Conformance-Check--All%20Passing-brightgreen)
 
+[![Release](https://img.shields.io/github/v/release/flowdigger/gradle-python-plugin?sort=semver)](https://central.sonatype.com/search?q=g:org.flowdigger.gradle%20AND%20a:gradle-python-plugin-impl)
+[![Maven Central](https://img.shields.io/maven-central/v/org.flowdigger.gradle/gradle-python-plugin-impl?label=Maven%20Central)](https://central.sonatype.com/search?q=g:org.flowdigger.gradle%20AND%20a:gradle-python-plugin-impl)
+
 [![Build and Test](https://github.com/flowdigger/gradle-python-plugin/actions/workflows/test.yml/badge.svg)](https://github.com/flowdigger/gradle-python-plugin/actions/workflows/test.yml)
 [![JUnit Report](https://img.shields.io/badge/JUnit-Report-blue?logo=githubactions)](https://github.com/flowdigger/gradle-python-plugin/actions/workflows/test.yml)
 [![Coverage CI](https://github.com/flowdigger/gradle-python-plugin/actions/workflows/coverage.yml/badge.svg)](https://github.com/flowdigger/gradle-python-plugin/actions/workflows/coverage.yml)
