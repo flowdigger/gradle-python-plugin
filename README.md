@@ -104,3 +104,24 @@ GitHub Actions is configured to run tests on every push (any branch) and pull re
 ## License
 
 This project is licensed under the terms of the `LICENSE` file.
+
+## Release to Maven Central
+
+Set credentials and signing material:
+
+```bash
+export ORG_GRADLE_PROJECT_mavenCentralUsername=...
+export ORG_GRADLE_PROJECT_mavenCentralPassword=...
+export ORG_GRADLE_PROJECT_signingKey=...
+export ORG_GRADLE_PROJECT_signingPassword=...
+export ORG_GRADLE_PROJECT_signingKeyId=...
+```
+
+Build signed Central bundle:
+
+```bash
+./gradlew clean packageCentralBundle
+```
+
+Release workflow (`.github/workflows/release.yml`) uploads bundle to Sonatype Central Publisher API on `v*` tags (or manual dispatch).
+Configure repository secrets: `MAVEN_CENTRAL_USERNAME`, `MAVEN_CENTRAL_PASSWORD`, `SIGNING_KEY`, `SIGNING_PASSWORD`, `SIGNING_KEY_ID`.

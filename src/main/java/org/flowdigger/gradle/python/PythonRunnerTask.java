@@ -162,7 +162,8 @@ public class PythonRunnerTask extends DefaultTask {
     }
 
     private ProcessOutput readProcessOutput(Process process) throws Exception {
-        try (ExecutorService executor = Executors.newFixedThreadPool(2)) {
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+        try {
             Future<String> stdoutFuture = executor.submit(streamReader(process.getInputStream()));
             Future<String> stderrFuture = executor.submit(streamReader(process.getErrorStream()));
 
@@ -171,6 +172,8 @@ public class PythonRunnerTask extends DefaultTask {
             return new ProcessOutput(stdout, stderr);
         } catch (ExecutionException e) {
             throw new GradleException("Failed to read process output", e.getCause());
+        } finally {
+            executor.shutdownNow();
         }
     }
 
