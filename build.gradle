@@ -57,7 +57,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
-            artifactId = 'gradle-python-plugin-impl'
+            artifactId = 'gradle-python-plugin'
 
             pom {
                 name = 'Python Plugin'
@@ -237,10 +237,10 @@ tasks.named('check') {
 
 tasks.register('stageCentralBundleRepo', Sync) {
     dependsOn tasks.named('publishMavenJavaPublicationToMavenLocal')
-    def artifactBaseDir = file("${System.getProperty('user.home')}/.m2/repository/org/flowdigger/gradle/gradle-python-plugin-impl")
+    def artifactBaseDir = file("${System.getProperty('user.home')}/.m2/repository/org/flowdigger/gradle/gradle-python-plugin")
     def artifactVersionDir = file("${artifactBaseDir}/${project.version}")
     from(artifactVersionDir)
-    into(layout.buildDirectory.dir("central-staging-repo/org/flowdigger/gradle/gradle-python-plugin-impl/${project.version}"))
+    into(layout.buildDirectory.dir("central-staging-repo/org/flowdigger/gradle/gradle-python-plugin/${project.version}"))
 
     doFirst {
         if (!artifactVersionDir.exists()) {
@@ -254,7 +254,7 @@ tasks.register('generateCentralBundleChecksums') {
 
     doLast {
         def stagedVersionDir = layout.buildDirectory
-                .dir("central-staging-repo/org/flowdigger/gradle/gradle-python-plugin-impl/${project.version}")
+                .dir("central-staging-repo/org/flowdigger/gradle/gradle-python-plugin/${project.version}")
                 .get()
                 .asFile
         if (!stagedVersionDir.exists()) {
