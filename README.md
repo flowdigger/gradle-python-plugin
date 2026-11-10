@@ -36,8 +36,8 @@ Structured Knowledge -> XIR -> Observation -> Derivation -> Knowledge -> Applica
 
 ## Plugin Coordinates
 
-- Plugin ID: `org.flowdigger.gradle.python`
-- Java package: `org.flowdigger.gradle.python`
+- Plugin ID: `org.flowdigger.python`
+- Java package: `org.flowdigger.python`
 - Registered task: `PythonRunnerTask`
 - Maven Central coordinates: `org.flowdigger.gradle:gradle-python-plugin:<version>`
 
@@ -51,7 +51,7 @@ Structured Knowledge -> XIR -> Observation -> Derivation -> Knowledge -> Applica
 
 ```groovy
 plugins {
-    id 'org.flowdigger.gradle.python'
+    id 'org.flowdigger.python'
 }
 
 PythonRunnerTask {
